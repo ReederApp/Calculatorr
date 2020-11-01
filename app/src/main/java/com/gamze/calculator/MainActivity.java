@@ -1,13 +1,13 @@
 package com.gamze.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,57 +35,90 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                myResult = num1 + num2;
-                result.setText(String.valueOf(myResult));
+                if (number1.getText().toString().matches("") || number2.getText().toString().matches("")) {
+                    Toast errorToast = Toast.makeText(MainActivity.this, "Enter a number!", Toast.LENGTH_SHORT);
+                    errorToast.show();
+
+                } else {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    myResult = num1 + num2;
+                    result.setText(String.valueOf(myResult));
+                }
+
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                myResult = num1 - num2;
-                result.setText(String.valueOf(myResult));
+                if (number1.getText().toString().matches("") || number2.getText().toString().matches("")) {
+                    Toast errorToast = Toast.makeText(MainActivity.this, "Enter a number!", Toast.LENGTH_SHORT);
+                    errorToast.show();
 
+                } else {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    myResult = num1 - num2;
+                    result.setText(String.valueOf(myResult));
+
+                }
             }
         });
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                myResult = num1 * num2;
-                result.setText(String.valueOf(myResult));
+                if (number1.getText().toString().matches("") || number2.getText().toString().matches("")) {
+                    Toast errorToast = Toast.makeText(MainActivity.this, "Enter a number!", Toast.LENGTH_SHORT);
+                    errorToast.show();
+
+                } else {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    myResult = num1 * num2;
+                    result.setText(String.valueOf(myResult));
+                }
 
             }
         });
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                if(num1==0){
-                    Toast errorToast = Toast.makeText(MainActivity.this, "Error, number1 cannot be zero!", Toast.LENGTH_SHORT);
+                if (number1.getText().toString().matches("") || number2.getText().toString().matches("")) {
+                    Toast errorToast = Toast.makeText(MainActivity.this, "Enter a number!", Toast.LENGTH_SHORT);
                     errorToast.show();
+                } else {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    if (num1 == 0) {
+                        Toast errorToast = Toast.makeText(MainActivity.this, "Error, number1 cannot be zero!", Toast.LENGTH_SHORT);
+                        errorToast.show();
+                    } else {
+                        myResult = (float) num1 / num2;
+                        result.setText(String.valueOf(myResult));
+                    }
                 }
-                else{
-                    myResult = (float)num1 / num2;
-                    result.setText(String.valueOf(myResult));
-                }
-
-
 
             }
         });
         percent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                myResult = num1 % num2;
-                result.setText(String.valueOf(myResult));
+                if (number1.getText().toString().matches("") || number2.getText().toString().matches("")) {
+                    Toast errorToast = Toast.makeText(MainActivity.this, "Enter a number!", Toast.LENGTH_SHORT);
+                    errorToast.show();
+
+                } else {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    if (num1 == 0) {
+                        Toast errorToast = Toast.makeText(MainActivity.this, "Error! Number1 cannot be zero!", Toast.LENGTH_SHORT);
+                        errorToast.show();
+                    } else {
+                        myResult = num1 % num2;
+                        result.setText(String.valueOf(myResult));
+                    }
+                }
+
 
             }
         });

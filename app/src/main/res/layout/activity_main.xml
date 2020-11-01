@@ -104,7 +104,7 @@
         android:layout_marginBottom="23dp"
         android:ems="10"
         android:hint="Second Number"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/result"
         app:layout_constraintEnd_toEndOf="@+id/result"
         app:layout_constraintTop_toBottomOf="@+id/number1" />
@@ -118,7 +118,7 @@
         android:layout_marginBottom="7dp"
         android:ems="10"
         android:hint="First Number"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/number2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -139,16 +139,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number2" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="148dp"
-        android:layout_height="174dp"
-        android:layout_marginEnd="20dp"
-        android:hint="History"
-        app:layout_constraintBottom_toBottomOf="@+id/percentButton"
-        app:layout_constraintEnd_toStartOf="@+id/addButton"
-        app:layout_constraintTop_toTopOf="@+id/subButton"
-        app:layout_constraintVertical_bias="0.516" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
